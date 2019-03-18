@@ -88,7 +88,8 @@ export default {
 }
  .search-field {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    flex-direction: column
   }
 .search-input {
   font-size: 2em;
