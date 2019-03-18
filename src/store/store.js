@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
         fetchError: false,
         icons: [
             { code: "01d", icon: "mdi-white-balance-sunny" },
-            { code: "01n", icon: "mdi-weather-night" },
+            { code: "01n", icon: "mdi-white-balance-sunny" },
             { code: "02d", icon: "mdi-weather-partlycloudy" },
             { code: "02n", icon: "mdi-weather-partlycloudy" },
             { code: "03d", icon: "mdi-cloud" },
@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
             var url =
                 "https://api.openweathermap.org/data/2.5/weather?q=" +
                 this.state.cityName +
-                "&appid=c86be36a020f3d6fc311354ac9cc9878&units=metric";
+                "&appid=50c5a6b0d0771c35aaa4bc8f849d2953&units=metric";
 
             axios.get(url).then(data => {
                     commit("GETCITYWEATHER", data);
@@ -52,7 +52,7 @@ export const store = new Vuex.Store({
             var url =
                 "https://api.openweathermap.org/data/2.5/forecast?q=" +
                 this.state.cityName +
-                "&appid=c86be36a020f3d6fc311354ac9cc9878&units=metric";
+                "&appid=50c5a6b0d0771c35aaa4bc8f849d2953&units=metric";
 
             axios.get(url)
                 .then(data =>

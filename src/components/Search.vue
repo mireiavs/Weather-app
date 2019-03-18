@@ -7,7 +7,7 @@
 
     <div class="search">
       <div class="search-btn">
-        <div>
+        <div class="search-field">
           <v-text-field
             outline
             dark
@@ -68,10 +68,14 @@ export default {
   font-weight: normal;
 }
 
-@media only screen and (max-width: 601px) {
-  .title h1 {
-    font-size: 2rem;
+@media only screen and (max-device-width: 667px) {
+  .page-title h1 {
+    font-size: 2.2rem;
+    color: white;
+    text-align: center;
+    font-weight: normal;
   }
+ 
 }
 
 .search {
@@ -82,10 +86,22 @@ export default {
   position: relative;
   padding-left: 65px;
 }
-
+ .search-field {
+    display: flex;
+    justify-content: center
+  }
 .search-input {
   font-size: 2em;
   background-color: transparent;
+}
+
+@media only screen and (max-device-width: 667px) {
+  .search-input {
+    font-size: 1.3em;
+  }
+  .search {
+    padding-left: 15px;
+  }
 }
 .v-input__control {
   margin-top: 6px;
@@ -96,7 +112,6 @@ export default {
   color: white;
   margin: 10px;
   text-align: center;
-
 }
 .search-btn {
   display: flex;

@@ -4,13 +4,15 @@
       <h2>{{ date }}</h2>
       <div class="forecasts">
         <div class="single-forecast" v-for="(forecast, index) in dayForecast(date)" :key="index">
-          <div><h3>{{getMoment(getTime(forecast.dt))}}</h3></div>
+          <div>
+            <h3>{{getMoment(getTime(forecast.dt))}}</h3>
+          </div>
           <v-icon
             class="forecast-icon"
             large
             color="white"
           >{{ geticonName(forecast.weather[0].icon) }}</v-icon>
-          <p class="forecast-desc">{{ forecast.weather[0].description }}</p>
+          <p class="forecast-desc">{{ capitalizeFirstLetter(forecast.weather[0].description) }}</p>
           <p>Cloudiness: {{ forecast.clouds.all }} %</p>
           <p>Temperature: {{ forecast.main.temp }} &deg;C</p>
           <p>Humidity: {{ forecast.main.humidity }} %</p>
@@ -83,6 +85,11 @@ export default {
     geticonName(code) {
       var iconObj = this.$store.state.icons.find(icon => icon.code === code);
       return iconObj.icon;
+    },
+    capitalizeFirstLetter(description) {
+      var firstletter = description[0].toUpperCase();
+      var rest = description.slice(1);
+      return `${firstletter}${rest}`;
     }
   }
 };
@@ -117,12 +124,12 @@ export default {
 .forecasts {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center
+  justify-content: center;
 }
 .single-forecast h3 {
   margin-top: 0;
 }
 h2 {
-  margin-top: 20px
+  margin-top: 20px;
 }
 </style>

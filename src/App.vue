@@ -23,9 +23,10 @@ export default {
 .background {
     background-image: url("./assets/background5.jpg");
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    width: inherit;
+    width: 100%;
     min-height: 100%
 }
 body {

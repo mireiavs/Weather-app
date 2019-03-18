@@ -9,7 +9,7 @@
           large
           color="white"
         >{{ geticonName(forecast.weather[0].icon) }}</v-icon>
-        <p class="forecast-desc">{{ forecast.weather[0].description }}</p>
+        <p class="forecast-desc">{{ capitalizeFirstLetter(forecast.weather[0].description )}}</p>
         <p>Cloudiness: {{ forecast.clouds.all }} %</p>
         <p>Temperature: {{ forecast.main.temp }} &deg;C</p>
         <p>Humidity: {{ forecast.main.humidity }} %</p>
@@ -51,6 +51,11 @@ export default {
     geticonName(code) {
       var iconObj = this.$store.state.icons.find(icon => icon.code === code);
       return iconObj.icon;
+    },
+    capitalizeFirstLetter(description) {
+      var firstletter = description[0].toUpperCase();
+      var rest = description.slice(1);
+      return `${firstletter}${rest}`;
     }
   }
 };
@@ -71,7 +76,7 @@ export default {
   font-family: "Karla", sans-serif;
   color: white;
   text-align: center;
-  padding-top: 20px
+  padding-top: 20px;
 }
 .forecast p {
   font-size: 1.2rem;
@@ -86,17 +91,17 @@ export default {
   color: white;
   width: 100%;
   margin-top: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .single-forecast {
   border: 1px solid white;
   margin: 10px;
   border-radius: 5px;
-  padding: 10px
+  padding: 10px;
 }
 
 .single-forecast h3 {
-  margin-top: 0
+  margin-top: 0;
 }
 </style>

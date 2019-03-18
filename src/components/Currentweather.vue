@@ -110,6 +110,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1
 }
 .icon-and-description p {
   text-align: center;
@@ -118,6 +119,7 @@ export default {
 .current-detail {
   display: flex;
   flex-direction: column;
-  justify-content: center
+  justify-content: center;
+  flex-grow: 1
 }
 </style>
