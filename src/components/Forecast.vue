@@ -40,9 +40,9 @@ export default {
       );
       return fourdays.filter(
         forecast =>
-          this.getTime(forecast.dt) === "10:00" ||
-          this.getTime(forecast.dt) === "16:00" ||
-          this.getTime(forecast.dt) === "22:00"
+          this.getTime(forecast.dt) === "11:00" ||
+          this.getTime(forecast.dt) === "14:00" ||
+          this.getTime(forecast.dt) === "17:00"
       );
     },
     allDates() {
